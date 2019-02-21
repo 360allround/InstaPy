@@ -51,6 +51,9 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+#Fix pip
+RUN sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
+
 # Installing latest chrome
 RUN cd ~ \
     && wget ${CHROME} \
