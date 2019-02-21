@@ -77,4 +77,4 @@ RUN git clone https://github.com/timgrossmann/InstaPy.git \
 COPY quickstart.py ./InstaPy
 WORKDIR /InstaPy
 
-CMD ["python3.5", "quickstart.py"]
+CMD ["python3.5", "quickstart_Copy.py"]
