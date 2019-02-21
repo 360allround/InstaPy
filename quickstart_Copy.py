@@ -1,5 +1,5 @@
 """
-360 Insta Scedule
+360 Insta Schedule
 """
 
 # imports
