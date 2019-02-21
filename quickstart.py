@@ -1,19 +1,37 @@
+"""
+360 Insta Scedule
+"""
+
+# imports
 from instapy import InstaPy
+from instapy.util import smart_run
 
-# Write your automation here
+# login credentials
+insta_username = 'drip.wear'
+insta_password = 'ThreeSixty30'
 
-ignore_words = []
-ignore_list = ['friend1', 'friend2', 'friend3']
+# get an InstaPy session!
+# set headless_browser=True to run InstaPy in the background
+session = InstaPy(username=insta_username,
+                  password=insta_password,
+                  headless_browser=True)
 
-# If you want to enter your Instagram Credentials directly just enter
-# username=<your-username-here> and password=<your-password> into InstaPy
-# e.g like so InstaPy(username="instagram", password="test1234")
+with smart_run(session):
+    # Neem deze accounts niet mee in de script
+    excludeaccounts = ["kaije5","krisrobertson","360allround"]
+    session.set_dont_include(excludeaccounts)
+    # Te gebruiken Hashtags
+    hashtagdb = ["urbanwear","streetwear","fashion","streetstyle","streetfashion","style","hiphop","urbanstyle","urbanfashion","mensfashion","urban","menswear","clothing","design","rap","photography","ootd","urbanclothing","instagood","supreme","streetclothing","clothingbrand","art","streetwearfashion","skateboarding","tshirt","apparel","clothes","skate","bhfyp"]
 
-InstaPy(username="drip.wear", password="ThreeSixty30") \
-    .login() \
-    .set_do_comment(True, percentage=10) \
-    .set_comments(['Cool!', 'Awesome!', 'Nice!']) \
-    .set_dont_include(friend_list) \
-    .set_ignore_if_contains(ignore_words) \
-    .like_by_tags(['dog', '#cat'], amount=100) \
-    .end()
+
+    # activities
+
+    #like by hashtag then like their account
+    #session.set_user_interact(amount=3, randomize=True, percentage=100)
+    #session.like_by_tags(hashtagdb, amount=10, interact=True)
+
+    # Like our feed
+    #session.like_by_feed(amount=100, randomize=False, unfollow=True, interact=True)
+
+    #Unfollow non Followers
+    session.unfollow_users(amount=100, nonFollowers=True, style="FIFO", unfollow_after=3*24*60*60, sleep_delay=655)
