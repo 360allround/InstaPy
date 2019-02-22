@@ -23,7 +23,7 @@ excludeaccounts = ["kaije5","krisrobertson","360allround"]
 # define session and get
 session = InstaPy(username=insta_username,
                   password=insta_password,
-                  headless_browser=True)
+                  headless_browser=False)
 
 def job_Unfollow():
   print("Started unfollow")
@@ -65,5 +65,6 @@ schedule.every().hour.do(job_Unfollow)
 
 
 while True:
+  #job_Unfollow()
   schedule.run_pending()
   time.sleep(10)
