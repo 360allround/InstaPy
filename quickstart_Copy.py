@@ -20,11 +20,13 @@ hashtagdb = ["hiphop","xxxtentacion","worldstar","trap","rap","rapper","soundclo
 # Neem deze accounts niet mee in de script
 excludeaccounts = ["kaije5","krisrobertson","360allround"]
 
-def job_Unfollow():
-  # get an InstaPy session!
+# define session and get
   session = InstaPy(username=insta_username,
                     password=insta_password,
                     headless_browser=True)
+
+def job_Unfollow():
+  print("Started unfollow")
 
   with smart_run(session):
     # Exclude these accounts
@@ -33,11 +35,8 @@ def job_Unfollow():
     session.unfollow_users(amount=100, nonFollowers=True, style="FIFO", unfollow_after=3*24*60*60, sleep_delay=0)
 
 def job_LikeByHashtags():
-  # get an InstaPy session!
-  session = InstaPy(username=insta_username,
-                    password=insta_password,
-                    headless_browser=True)
-
+  print("Started Like by hashtag")
+  
   with smart_run(session):
     # Exclude these accounts
     session.set_dont_include(excludeaccounts)
@@ -46,10 +45,7 @@ def job_LikeByHashtags():
     session.like_by_tags(hashtagdb, amount=10, interact=True)
 
 def job_FollowByAccount():
-  # get an InstaPy session!
-  session = InstaPy(username=insta_username,
-                    password=insta_password,
-                    headless_browser=True)
+  print("Started Follow by account")
 
   with smart_run(session):
     # Exclude these accounts
@@ -57,10 +53,7 @@ def job_FollowByAccount():
     # Follow someone elses Follower
 
 def job_CommentActivity():
-  # get an InstaPy session!
-  session = InstaPy(username=insta_username,
-                    password=insta_password,
-                    headless_browser=True)
+  print("Started Commenting")
 
   with smart_run(session):
     # Exclude these accounts
@@ -68,8 +61,7 @@ def job_CommentActivity():
     # comment
 
 # Schedules
-schedule.every().day.at("6:35").do(job_Unfollow)
-schedule.every().day.at("16:22").do(job_LikeByHashtags)
+schedule.every().hour.do(job_Unfollow)
 
 
 while True:
