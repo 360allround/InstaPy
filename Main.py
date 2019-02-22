@@ -65,6 +65,5 @@ schedule.every().hour.do(job_Unfollow)
 
 
 while True:
-  #job_Unfollow()
   schedule.run_pending()
   time.sleep(10)
