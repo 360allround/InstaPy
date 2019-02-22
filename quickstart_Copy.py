@@ -67,6 +67,7 @@ def job_CommentActivity():
     session.set_dont_include(excludeaccounts)
     # comment
 
+# Schedules
 schedule.every().day.at("6:35").do(job_Unfollow)
 schedule.every().day.at("16:22").do(job_LikeByHashtags)
 
