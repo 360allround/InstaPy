@@ -21,9 +21,9 @@ hashtagdb = ["hiphop","xxxtentacion","worldstar","trap","rap","rapper","soundclo
 excludeaccounts = ["kaije5","krisrobertson","360allround"]
 
 # define session and get
-  session = InstaPy(username=insta_username,
-                    password=insta_password,
-                    headless_browser=True)
+session = InstaPy(username=insta_username,
+                  password=insta_password,
+                  headless_browser=True)
 
 def job_Unfollow():
   print("Started unfollow")
