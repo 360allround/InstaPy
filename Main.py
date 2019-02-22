@@ -17,13 +17,25 @@ insta_password = 'ThreeSixty30'
 hashtagdb_Store = ["urbanwear","streetwear","fashion","streetstyle","streetfashion","style","hiphop","urbanstyle","urbanfashion","mensfashion","urban","menswear","clothing","design","rap","photography","ootd","urbanclothing","instagood","supreme","streetclothing","clothingbrand","art","streetwearfashion","skateboarding","tshirt","apparel","clothes","skate","bhfyp"]
 hashtagdb = ["hiphop","xxxtentacion","worldstar","trap","rap","rapper","soundcloud","producer","newsong","instamusic","studio","hiphopculture","losangeles","beat"]
 
-# Neem deze accounts niet mee in de script
+#comments
+commentdb = ["Lit"]
+# Neem deze accounts wel/niet mee in de script
+includeaccounts = [""]
 excludeaccounts = ["kaije5","krisrobertson","360allround"]
 
 # define session and get
 session = InstaPy(username=insta_username,
                   password=insta_password,
                   headless_browser=False)
+
+def job_Interact():
+  with smart_run(session):
+    session.set_user_interact(amount=5, randomize=True, percentage=100)
+    session.set_do_follow(enabled=True, percentage=100)
+    session.set_do_like(enabled=True, percentage=100)
+    session.set_comments(commentdb)
+    session.set_do_comment(enabled=True, percentage=80)
+    session.interact_user_following(includeaccounts, amount=10, randomize=True)
 
 def job_Unfollow():
   print("Started unfollow")
