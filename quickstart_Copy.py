@@ -25,13 +25,18 @@ with smart_run(session):
 
 
     # activities
-
+    """"
+    #--Interact--
     #like by hashtag then like their account
-    #session.set_user_interact(amount=3, randomize=True, percentage=100)
-    #session.like_by_tags(hashtagdb, amount=10, interact=True)
+    session.set_user_interact(amount=3, randomize=True, percentage=100)
+    session.like_by_tags(hashtagdb, amount=10, interact=True)
 
     # Like our feed
-    #session.like_by_feed(amount=100, randomize=False, unfollow=True, interact=True)
-
+    session.like_by_feed(amount=100, randomize=False, unfollow=True, interact=True)
+    """
     #Unfollow non Followers
-    session.unfollow_users(amount=100, nonFollowers=True, style="FIFO", unfollow_after=3*24*60*60, sleep_delay=655)
+    session.unfollow_users(amount=100, nonFollowers=True, style="FIFO", unfollow_after=3*24*60*60, sleep_delay=1)
+
+    #Follow someone elses Follower
+
+    #comment
