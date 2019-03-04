@@ -29,9 +29,6 @@ RUN pip3 install instapy instapy-chromedriver && \
   rm google-chrome-stable_current_amd64.deb 
 
 WORKDIR /
-ADD https://raw.githubusercontent.com/InstaPy/instapy-quickstart/master/quickstart.py /
-
-# Set quickstart.py to default to headleass browser, which is necessary in our case
-RUN sed -i 's/headless_browser=False/headless_browser=True/' /quickstart.py
+ADD https://raw.githubusercontent.com/360allround/InstaPy/master/main.py /
 
 CMD python3 /main.py
