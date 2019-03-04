@@ -26,7 +26,7 @@ excludeaccounts = ["kaije5","krisrobertson","360allround"]
 # define session and get
 session = InstaPy(username=insta_username,
                   password=insta_password,
-                  headless_browser=False)
+                  headless_browser=True)
 
 def job_Interact():
   with smart_run(session):
@@ -77,6 +77,5 @@ schedule.every().hour.do(job_Unfollow)
 
 
 while True:
-  job_Unfollow()
   schedule.run_pending()
   time.sleep(10)
