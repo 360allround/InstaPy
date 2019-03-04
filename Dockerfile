@@ -27,6 +27,8 @@ RUN pip3 install instapy instapy-chromedriver && \
   dpkg -i google-chrome-stable_current_amd64.deb && \
   apt-get install -y -f && \
   rm google-chrome-stable_current_amd64.deb 
+  
+RUN pip3 install schedule
 
 #select what script to run
 WORKDIR /
