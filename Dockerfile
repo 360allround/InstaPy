@@ -34,4 +34,4 @@ ADD https://raw.githubusercontent.com/InstaPy/instapy-quickstart/master/quicksta
 # Set quickstart.py to default to headleass browser, which is necessary in our case
 RUN sed -i 's/headless_browser=False/headless_browser=True/' /quickstart.py
 
-CMD python3 /Main.py
+CMD python3 /main.py
