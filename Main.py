@@ -44,7 +44,7 @@ def job_Unfollow():
     # Exclude these accounts
     session.set_dont_include(excludeaccounts)
     # Unfollow non Followers
-    session.unfollow_users(amount=100, nonFollowers=True, style="FIFO", unfollow_after=3*24*60*60, sleep_delay=0)
+    session.unfollow_users(amount=8, nonFollowers=True, style="FIFO", unfollow_after=3*24*60*60, sleep_delay=0)
 
 def job_LikeByHashtags():
   print("Started Like by hashtag")
