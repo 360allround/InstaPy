@@ -38,7 +38,7 @@ def job_Interact():
     session.interact_user_following(includeaccounts, amount=10, randomize=True)
 
 def job_Unfollow():
-  print("Started unfollow")
+  print("Started unfollowing")
 
   with smart_run(session):
     # Exclude these accounts

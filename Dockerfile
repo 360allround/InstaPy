@@ -28,7 +28,8 @@ RUN pip3 install instapy instapy-chromedriver && \
   apt-get install -y -f && \
   rm google-chrome-stable_current_amd64.deb 
 
+#select what script to run
 WORKDIR /
-ADD https://raw.githubusercontent.com/360allround/InstaPy/master/main.py /
+ADD https://raw.githubusercontent.com/360allround/InstaPy/master/Main.py /
 
-CMD python3 /main.py
+CMD python3 /Main.py
