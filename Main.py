@@ -11,7 +11,7 @@ import time
 
 # login credentials
 insta_username = 'drip.wear'
-insta_password = 'ThreeSixty30'
+insta_password = 'ThreeDrip#050'
 
 # Hashtag Databases
 hashtagdb_Store = ["urbanwear","streetwear","fashion","streetstyle","streetfashion","style","hiphop","urbanstyle","urbanfashion","mensfashion","urban","menswear","clothing","design","rap","photography","ootd","urbanclothing","instagood","supreme","streetclothing","clothingbrand","art","streetwearfashion","skateboarding","tshirt","apparel","clothes","skate","bhfyp"]
